@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script type="module" src="../src/mnml-accordeon/mnml-accordeon.js"></script>
+    <script type="module" src="../src/mnml-accordeon-summary/mnml-accordeon-summary.js"></script>
+    <script type="module" src="../src/mnml-accordeon-details/mnml-accordeon-details.js"></script>
+
+    <style>
+      mnml-accordeon {
+	display: block;
+	width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <mnml-accordeon open="true">
+      <mnml-accordeon-summary>
+	Accordeon Summary
+      </mnml-accordeon-summary>
+      <mnml-accordeon-details>
+	<p>Lorem ipsum!</p>
+	<ol>
+	  <li>One</li>
+	  <li>Two</li>
+	  <li>Three</li>
+	</ol>
+      </mnml-accordeon-details>
+    </mnml-accordeon>
+
+    <script>
+      const accordeon = document.querySelector('mnml-accordeon');
+
+      accordeon.onChange = () => {
+        accordeon.open = !accordeon.open;
+      };
+    </script>
+  </body>
+</html>
